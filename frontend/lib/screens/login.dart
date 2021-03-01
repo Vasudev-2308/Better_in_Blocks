@@ -1,6 +1,8 @@
 import 'package:frontend/screens/register.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/registermode.dart';
+import 'package:frontend/screens/verify.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -173,6 +175,11 @@ class _LoginState extends State<Login> {
                                         username_Controller.text;
                                     final String password =
                                         password_Controller.text;
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                Verify()));
                                   }
                                 },
                               ),
@@ -193,7 +200,7 @@ class _LoginState extends State<Login> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (BuildContext context) =>
-                                                  Register()));
+                                                  RegMode()));
                                       // print('Terms of Service"');
                                     }),
                             )

@@ -75,6 +75,13 @@
     <item name="text2" type="id"/>
     <item name="title" type="id"/>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="default_web_client_id" translatable="false">1019933878071-jteavd8r6t7avjcij0glptku16t5plib.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1019933878071</string>
+    <string name="google_api_key" translatable="false">AIzaSyDOmkAr1KR_p46EEhhN4TjsuW5waoApETw</string>
+    <string name="google_app_id" translatable="false">1:1019933878071:android:436a4d73937e61d33d9cb2</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDOmkAr1KR_p46EEhhN4TjsuW5waoApETw</string>
+    <string name="google_storage_bucket" translatable="false">betterinblocks-731ed.appspot.com</string>
+    <string name="project_id" translatable="false">betterinblocks-731ed</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
         <!-- Show a splash screen on the activity. Automatically removed when
