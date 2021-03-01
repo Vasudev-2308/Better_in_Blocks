@@ -1,4 +1,4 @@
-import 'package:better_in_blocks/screens/register.dart';
+import 'package:frontend/screens/register.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -32,13 +32,12 @@ class _LoginState extends State<Login> {
 
                     end: Alignment(
                         0.9, 0.0), // 10% of the width, so there are ten blinds.
-                    colors: [
-                      const Color(0xff6DD5FA),
-                      const Color(0xff86A8E7),
-                      const Color(0xffffffff)
-                    ], // red to yellow
-                    tileMode: TileMode
-                        .repeated, // repeats the gradient over the canvas
+                    // colors: [
+                    //   const Color(0xff6DD5FA),
+                    //   const Color(0xff86A8E7),
+                    //   const Color(0xffffffff)
+                    // ], // red to yellow
+                    // repeats the gradient over the canvas
                   ),
                 ),
               ),

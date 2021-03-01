@@ -1,4 +1,4 @@
-import 'package:better_in_blocks/shared/loading.dart';
+import 'package:frontend/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'screens/login.dart';

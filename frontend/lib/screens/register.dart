@@ -1,4 +1,4 @@
-import 'package:better_in_blocks/screens/login.dart';
+import 'package:frontend/screens/login.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +35,7 @@ class _RegisterState extends State<Register> {
                     colors: [
                       const Color(0xff12D8FA),
                       const Color(0xff1FA2FF),
-                      const Color(0xffA6FFCB)
+                      const Color(0xffA6FFCB),
                     ], // red to yellow
                     tileMode: TileMode
                         .repeated, // repeats the gradient over the canvas
