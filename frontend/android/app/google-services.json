@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1019933878071",
+    "project_id": "betterinblocks-731ed",
+    "storage_bucket": "betterinblocks-731ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019933878071:android:436a4d73937e61d33d9cb2",
+        "android_client_info": {
+          "package_name": "com.example.better_in_blocks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019933878071-57jg8rda3cu2c008q7tkgbqiao61apl3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.better_in_blocks",
+            "certificate_hash": "1162b119118647ef6ce6612354708cfd9ae218d8"
+          }
+        },
+        {
+          "client_id": "1019933878071-jteavd8r6t7avjcij0glptku16t5plib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOmkAr1KR_p46EEhhN4TjsuW5waoApETw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019933878071-jteavd8r6t7avjcij0glptku16t5plib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
