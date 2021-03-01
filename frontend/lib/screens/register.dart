@@ -1,6 +1,8 @@
 import 'package:frontend/screens/login.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/student/initscreen.dart';
+import 'package:frontend/screens/student/view_certificates.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -193,7 +195,13 @@ class _RegisterState extends State<Register> {
                                     final String verify = confirm_password.text;
 
                                     if (username.isNotEmpty &&
-                                        password == verify) {}
+                                        password == verify) {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (BuildContext context) =>
+                                                  InitScreen()));
+                                    }
                                   }
                                 },
                               ),
