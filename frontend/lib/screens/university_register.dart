@@ -23,7 +23,7 @@ class _UniversityState extends State<University> {
           return false;
         },
         child: Scaffold(
-          resizeToAvoidBottomPadding: false,
+          resizeToAvoidBottomInset: false,
           body: Stack(
             children: [
               Container(
@@ -183,7 +183,7 @@ class _UniversityState extends State<University> {
                                     ),
                                   ],
                                   color: Colors.blue),
-                              child: FlatButton(
+                              child: TextButton(
                                 child: Text("Register"),
                                 onPressed: () {
                                   if (_formKey.currentState.validate()) {
