@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 
 class CertifAddView extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class _CertifAddViewState extends State<CertifAddView> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Colors.blue[100],
-      body: Stack(children: [
+      body: Stack(fit: StackFit.expand, children: [
         Container(
             decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -18,8 +19,9 @@ class _CertifAddViewState extends State<CertifAddView> {
             end: Alignment(
                 0.8, 0.0), // 10% of the width, so there are ten blinds.
             colors: [
-              const Color(0xffEFEFBB),
-              const Color(0xffD4D3DD)
+              const Color(0xffF2F2F2),
+              const Color(0xffEAEAEA),
+              const Color(0xffffffff)
             ], // red to yellow
             tileMode: TileMode.repeated, // repeats the gradient over the canvas
           ),

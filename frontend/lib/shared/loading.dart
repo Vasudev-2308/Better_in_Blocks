@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:frontend/screens/login.dart';
-import 'package:frontend/screens/register.dart';
+import 'package:frontend/screens/universal/login.dart';
+import 'package:frontend/screens/universal/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 

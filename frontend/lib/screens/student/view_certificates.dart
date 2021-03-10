@@ -13,7 +13,7 @@ class _CertifViewState extends State<CertifView> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Colors.blue[100],
-      body: Stack(children: [
+      body: Stack(fit: StackFit.expand, children: [
         Container(
             decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -21,17 +21,18 @@ class _CertifViewState extends State<CertifView> {
             end: Alignment(
                 0.8, 0.0), // 10% of the width, so there are ten blinds.
             colors: [
-              const Color(0xffEFEFBB),
-              const Color(0xffD4D3DD)
+              const Color(0xffF2F2F2),
+              const Color(0xffEAEAEA),
+              const Color(0xffffffff)
             ], // red to yellow
             tileMode: TileMode.repeated, // repeats the gradient over the canvas
           ),
         )),
         Column(
-          //mainAxisAlignment: MainAxisAlignment.,
+          //mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.fromLTRB(20, 50, 0, 0),
+              padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
               child: Text(
                 "Certificates",
                 style: TextStyle(

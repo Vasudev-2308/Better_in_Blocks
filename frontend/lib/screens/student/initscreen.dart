@@ -35,19 +35,16 @@ class _InitScreenState extends State<InitScreen> {
         onPageChanged: (index) {
           setState(() {
             selectedpage = index;
-            pageController.jumpToPage(
-              index,
-              //curve: Curves.fastOutSlowIn,
-              //duration: Duration(milliseconds: 300)
-            );
+            pageController.animateToPage(index,
+                curve: Curves.easeInOut, duration: Duration(milliseconds: 300));
           });
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Color(0xff0072ff),
           currentIndex: selectedpage,
-          selectedItemColor: Colors.purple[700],
-          unselectedItemColor: Colors.grey,
+          selectedItemColor: Colors.blue[700],
+          unselectedItemColor: Colors.blueGrey,
           type: BottomNavigationBarType.shifting,
           items: [
             BottomNavigationBarItem(
