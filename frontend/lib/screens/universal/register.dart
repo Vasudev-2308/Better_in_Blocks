@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/student/initscreen.dart';
 import 'package:frontend/screens/student/view_certificates.dart';
+import 'package:frontend/shared/otp.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -209,7 +210,7 @@ class _RegisterState extends State<Register> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (BuildContext context) =>
-                                                  InitScreen()));
+                                                  OtpForm()));
                                     }
                                   }
                                 },

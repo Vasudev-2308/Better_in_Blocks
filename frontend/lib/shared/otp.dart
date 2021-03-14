@@ -1,174 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/shared/size_config.dart';
+import 'package:frontend/screens/student/initscreen.dart';
+import 'package:frontend/screens/student/view_certificates.dart';
+import 'package:otp_screen/otp_screen.dart';
 
 class OtpForm extends StatefulWidget {
-  const OtpForm({
-    Key key,
-  }) : super(key: key);
-
   @override
   _OtpFormState createState() => _OtpFormState();
 }
 
 class _OtpFormState extends State<OtpForm> {
-  FocusNode pin1FocusNode;
-  FocusNode pin2FocusNode;
-  FocusNode pin3FocusNode;
-  FocusNode pin4FocusNode;
-  FocusNode pin5FocusNode;
-  FocusNode pin6FocusNode;
-
-  @override
-  void initState() {
-    super.initState();
-    pin1FocusNode = FocusNode();
-    pin2FocusNode = FocusNode();
-    pin3FocusNode = FocusNode();
-    pin4FocusNode = FocusNode();
-    pin5FocusNode = FocusNode();
-    pin6FocusNode = FocusNode();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    pin1FocusNode.dispose();
-    pin2FocusNode.dispose();
-    pin3FocusNode.dispose();
-    pin4FocusNode.dispose();
-    pin5FocusNode.dispose();
-    pin6FocusNode.dispose();
-  }
-
-  void nextField(String value, FocusNode focusNode) {
-    if (value.length == 1) {
-      focusNode.requestFocus();
+  Future<String> validateOtp(String otp) async {
+    await Future.delayed(Duration(milliseconds: 2000));
+    if (otp == "123456") {
+      return null;
+    } else {
+      return "The entered Otp is wrong";
     }
+  }
+
+  // action to be performed after OTP validation is success
+  void moveToNextScreen(context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => InitScreen()));
   }
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      child: Column(
-        children: [
-          SizedBox(height: SizeConfig.screenHeight * 0.15),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: getProportionateScreenWidth(60),
-                child: TextFormField(
-                  autofocus: true,
-                  obscureText: true,
-                  style: TextStyle(fontSize: 24),
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  onChanged: (value) {
-                    nextField(value, pin2FocusNode);
-                  },
-                ),
-              ),
-              SizedBox(
-                width: getProportionateScreenWidth(60),
-                child: TextFormField(
-                  focusNode: pin1FocusNode,
-                  obscureText: true,
-                  style: TextStyle(fontSize: 24),
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  onChanged: (value) => nextField(value, pin3FocusNode),
-                ),
-              ),
-              SizedBox(
-                width: getProportionateScreenWidth(60),
-                child: TextFormField(
-                  focusNode: pin2FocusNode,
-                  obscureText: true,
-                  style: TextStyle(fontSize: 24),
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  onChanged: (value) => nextField(value, pin4FocusNode),
-                ),
-              ),
-              SizedBox(
-                width: getProportionateScreenWidth(60),
-                child: TextFormField(
-                  focusNode: pin3FocusNode,
-                  obscureText: true,
-                  style: TextStyle(fontSize: 24),
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  onChanged: (value) {
-                    if (value.length == 1) {
-                      pin4FocusNode.unfocus();
-                      // Then you need to check is the code is correct or not
-                    }
-                  },
-                ),
-              ),
-              SizedBox(
-                width: getProportionateScreenWidth(60),
-                child: TextFormField(
-                  focusNode: pin4FocusNode,
-                  obscureText: true,
-                  style: TextStyle(fontSize: 24),
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  onChanged: (value) => nextField(value, pin3FocusNode),
-                ),
-              ),
-              SizedBox(
-                width: getProportionateScreenWidth(60),
-                child: TextFormField(
-                  focusNode: pin5FocusNode,
-                  obscureText: true,
-                  style: TextStyle(fontSize: 24),
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  onChanged: (value) => nextField(value, pin3FocusNode),
-                ),
-              ),
-              SizedBox(
-                width: getProportionateScreenWidth(60),
-                child: TextFormField(
-                  focusNode: pin6FocusNode,
-                  obscureText: true,
-                  style: TextStyle(fontSize: 24),
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  onChanged: (value) => nextField(value, pin3FocusNode),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: SizeConfig.screenHeight * 0.15),
-          TextButton(
-            child: Text("Continue"),
-            onPressed: () {},
-          )
-        ],
-      ),
+    return Scaffold(
+      body: OtpScreen.withGradientBackground(
+          topColor: Color(0xff36D1DC),
+          bottomColor: Color(0xff5B86E5),
+          themeColor: Colors.white,
+          titleColor: Colors.black,
+          otpLength: 6,
+          validateOtp: validateOtp,
+          routeCallback: moveToNextScreen,
+          subTitle: "",
+          title: "6 Digit OTP sent to your Mail"),
     );
   }
 }
