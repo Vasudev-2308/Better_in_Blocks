@@ -28,15 +28,21 @@ class _OtpFormState extends State<OtpForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: OtpScreen.withGradientBackground(
-          topColor: Color(0xff36D1DC),
-          bottomColor: Color(0xff5B86E5),
-          themeColor: Colors.white,
-          titleColor: Colors.black,
-          otpLength: 6,
-          validateOtp: validateOtp,
-          routeCallback: moveToNextScreen,
-          subTitle: "",
-          title: "6 Digit OTP sent to your Mail"),
+        topColor: Color(0xff36D1DC),
+        bottomColor: Color(0xff5B86E5),
+        themeColor: Colors.white,
+        titleColor: Colors.black,
+        otpLength: 6,
+        validateOtp: validateOtp,
+        routeCallback: moveToNextScreen,
+        subTitle: "",
+        title: "6 Digit OTP sent to your Mail",
+        icon: Icon(
+          Icons.security,
+          size: 100,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
