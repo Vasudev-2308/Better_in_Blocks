@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/universal/login.dart';
 
 class UserView extends StatefulWidget {
   @override
@@ -6,6 +8,22 @@ class UserView extends StatefulWidget {
 }
 
 class _UserViewState extends State<UserView> {
+  final auth = FirebaseAuth.instance;
+  User user;
+
+  @override
+  void initState() {
+    super.initState();
+    user = auth.currentUser;
+  }
+
+  void signOut() async {
+    auth.signOut().then((value) => () {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (BuildContext context) => Login()));
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +56,11 @@ class _UserViewState extends State<UserView> {
                     fontSize: 25),
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            FloatingActionButton.extended(
+                onPressed: signOut, label: Text("SignOut"))
           ],
         )
       ]),

@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:frontend/screens/universal/login.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/university/uniinit.dart';
 import 'package:frontend/auth/verify.dart';
+import 'package:frontend/shared/load2uinit.dart';
 
 class University extends StatefulWidget {
   @override
@@ -10,6 +12,8 @@ class University extends StatefulWidget {
 }
 
 class _UniversityState extends State<University> {
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  bool obscure = true;
   final _formKey = GlobalKey<FormState>();
   TextEditingController username_Controller = new TextEditingController();
   TextEditingController uid_Controller = new TextEditingController();
@@ -146,6 +150,7 @@ class _UniversityState extends State<University> {
                                 child: TextFormField(
                                     controller: uid_Controller,
                                     obscureText: false,
+                                    keyboardType: TextInputType.emailAddress,
                                     //scrollPadding: EdgeInsets.only(left: 10),
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
@@ -162,9 +167,18 @@ class _UniversityState extends State<University> {
                                 ),
                                 child: TextFormField(
                                     controller: password_controller,
-                                    obscureText: true,
+                                    obscureText: obscure,
                                     //scrollPadding: EdgeInsets.only(left: 10),
                                     decoration: InputDecoration(
+                                      suffixIcon: IconButton(
+                                        icon: new Icon(Icons.remove_red_eye,
+                                            color: Colors.grey[600]),
+                                        onPressed: () {
+                                          setState(() {
+                                            obscure = !obscure;
+                                          });
+                                        },
+                                      ),
                                       border: InputBorder.none,
                                       labelText: 'Password',
                                     ))),
@@ -199,11 +213,13 @@ class _UniversityState extends State<University> {
                                     final String verify =
                                         password_controller.text;
 
-                                    var push = Navigator.push(
+                                    _auth.createUserWithEmailAndPassword(
+                                        email: username, password: verify);
+                                    Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                             builder: (BuildContext context) =>
-                                                UniversityInit()));
+                                                Load2Uinit()));
                                   }
                                 },
                               ),

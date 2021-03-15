@@ -6,7 +6,7 @@ import 'package:flutter/gestures.dart';
 // a [Container] display a [BoxDecoration] with a [LinearGradient].
 
 import 'package:flutter/material.dart';
-import 'package:frontend/screens/universal/register.dart';
+import 'package:frontend/screens/universal/studentreg.dart';
 import 'package:frontend/screens/universal/university_register.dart';
 import 'package:frontend/auth/verify.dart';
 

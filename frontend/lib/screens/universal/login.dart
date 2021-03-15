@@ -1,8 +1,12 @@
-import 'package:frontend/screens/universal/register.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:email_auth/email_auth.dart';
+import 'package:frontend/screens/universal/studentreg.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/universal/registermode.dart';
 import 'package:frontend/auth/verify.dart';
+import 'package:frontend/shared/load2init.dart';
+import 'package:frontend/shared/load2otp.dart';
 import 'package:frontend/shared/otp.dart';
 
 class Login extends StatefulWidget {
@@ -11,9 +15,19 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final auth = FirebaseAuth.instance;
+  bool obscure = true;
   final _formKey = GlobalKey<FormState>();
   TextEditingController username_Controller = new TextEditingController();
   TextEditingController password_Controller = new TextEditingController();
+
+  void sendOtp() async {
+    EmailAuth.sessionName = "Validate User";
+    var res = EmailAuth.sendOtp(receiverMail: username_Controller.text);
+    if (res != null) {
+      print("true");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -146,12 +160,22 @@ class _LoginState extends State<Login> {
                                 ),
                                 child: TextFormField(
                                     controller: password_Controller,
-                                    obscureText: true,
+                                    obscureText: obscure,
                                     //scrollPadding: EdgeInsets.only(left: 10),
                                     decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      labelText: 'Password',
-                                    ))),
+                                        border: InputBorder.none,
+                                        labelText: 'Password',
+                                        suffixIcon: IconButton(
+                                          icon: new Icon(
+                                            Icons.remove_red_eye,
+                                            color: Colors.grey[600],
+                                          ),
+                                          onPressed: () {
+                                            setState(() {
+                                              obscure = !obscure;
+                                            });
+                                          },
+                                        )))),
                             SizedBox(
                               height: 20,
                             ),
@@ -182,11 +206,14 @@ class _LoginState extends State<Login> {
                                         username_Controller.text;
                                     final String password =
                                         password_Controller.text;
-                                    Navigator.push(
+                                    auth.signInWithEmailAndPassword(
+                                        email: username, password: password);
+                                    sendOtp();
+                                    Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                             builder: (BuildContext context) =>
-                                                OtpForm()));
+                                                Load2Init()));
                                   }
                                 },
                               ),
