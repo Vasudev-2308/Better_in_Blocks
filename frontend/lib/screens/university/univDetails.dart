@@ -6,6 +6,7 @@ import 'package:frontend/screens/student/initscreen.dart';
 import 'package:frontend/screens/student/view_certificates.dart';
 import 'package:frontend/screens/universal/load2init.dart';
 import 'package:frontend/screens/universal/load2init2.dart';
+import 'package:frontend/services/database.dart';
 import 'package:frontend/shared/load2otp.dart';
 import 'package:frontend/screens/university/load2uinit.dart';
 import 'package:frontend/screens/university/load2uniinit2.dart';
@@ -38,6 +39,16 @@ class _UnivDataState extends State<UnivData> {
         currentDate = pickedDate;
       });
     return currentDate.toString();
+  }
+
+  void _handleDialogSubmission() {
+    var univDetail = <String, dynamic>{
+      'universityname': username_Controller.text,
+      'universityid': email_controller.text,
+      'regdate': date_controller.text,
+      'phonenumber': phone_Controller.text
+    };
+    Database.addInstitute(univDetail);
   }
 
   @override
@@ -305,6 +316,7 @@ class _UnivDataState extends State<UnivData> {
                                         dob.isNotEmpty) {
                                       // _auth.createUserWithEmailAndPassword(
                                       // email: username, password: password);
+                                      _handleDialogSubmission();
                                       Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(

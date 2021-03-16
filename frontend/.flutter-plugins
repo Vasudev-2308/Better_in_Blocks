@@ -1,9 +1,12 @@
 # This is a generated file; do not edit or check into version control.
 awesome_notifications=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/awesome_notifications-0.0.5+8/
+cloud_firestore=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-1.0.1/
+cloud_firestore_web=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-1.0.1/
 firebase_auth=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-1.0.1/
 firebase_auth_web=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.0.2/
 firebase_core=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.0.1/
 firebase_core_web=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.0.1/
+firebase_database=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-6.1.0/
 path_provider=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1/
 path_provider_linux=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0/
 path_provider_macos=/home/vdx/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.0/

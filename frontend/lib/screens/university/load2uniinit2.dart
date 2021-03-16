@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:frontend/models/universityDetails.dart';
 import 'package:frontend/screens/student/initscreen.dart';
 import 'package:frontend/screens/student/userDetailCollection.dart';
 import 'package:frontend/screens/universal/login.dart';
@@ -7,6 +8,7 @@ import 'package:frontend/screens/universal/studentreg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:frontend/screens/university/uniinit.dart';
+import 'package:frontend/screens/university/univDetails.dart';
 import 'package:frontend/shared/otp2.dart';
 
 class Load2UniInit2 extends StatefulWidget {

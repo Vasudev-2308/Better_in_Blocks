@@ -7,6 +7,7 @@ import 'package:frontend/screens/student/view_certificates.dart';
 import 'package:frontend/screens/universal/load2init.dart';
 import 'package:frontend/screens/university/load2uinit.dart';
 import 'package:frontend/screens/university/load2uniinit2.dart';
+import 'package:frontend/screens/university/univDetails.dart';
 import 'package:otp_screen/otp_screen.dart';
 import 'package:email_auth/email_auth.dart';
 
@@ -50,7 +51,7 @@ class _OtpForm2State extends State<OtpForm2> {
   // action to be performed after OTP validation is success
   void moveToNextScreen(context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Load2UniInit2()));
+        context, MaterialPageRoute(builder: (context) => UnivData()));
   }
 
   @override

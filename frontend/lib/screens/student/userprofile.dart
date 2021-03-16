@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/universal/login.dart';
@@ -24,9 +25,33 @@ class _UserViewState extends State<UserView> {
         });
   }
 
+  // userValue() async {
+  //   return StreamBuilder(
+  //       stream: FirebaseFirestore.instance.collection('student').snapshots(),
+  //       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+  //         if (snapshot.hasData) {
+  //           return ListView.builder(
+  //             padding: const EdgeInsets.all(10.0),
+  //             itemBuilder: (BuildContext context, int index) =>
+  //                 Text(snapshot.data.docs[index]['uid']),
+  //             itemCount: snapshot.data.docs.length,
+  //           );
+  //         } else {
+  //           return ListView(
+  //             children: snapshot.data.docs.map((document) {
+  //               return Container(
+  //                 child: Center(child: Text(document['username'])),
+  //               );
+  //             }).toList(),
+  //           );
+  //         }
+  //       });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       //backgroundColor: Colors.blue[100]
       body: Stack(fit: StackFit.expand, children: [
         Container(
@@ -59,8 +84,12 @@ class _UserViewState extends State<UserView> {
             SizedBox(
               height: 20,
             ),
-            FloatingActionButton.extended(
-                onPressed: signOut, label: Text("SignOut"))
+            Container(
+              child: Text(
+                "Harshil",
+                style: TextStyle(fontSize: 20),
+              ),
+            )
           ],
         )
       ]),

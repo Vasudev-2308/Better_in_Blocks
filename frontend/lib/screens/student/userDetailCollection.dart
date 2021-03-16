@@ -6,6 +6,7 @@ import 'package:frontend/screens/student/initscreen.dart';
 import 'package:frontend/screens/student/view_certificates.dart';
 import 'package:frontend/screens/universal/load2init.dart';
 import 'package:frontend/screens/universal/load2init2.dart';
+import 'package:frontend/services/database.dart';
 import 'package:frontend/shared/load2otp.dart';
 import 'package:frontend/shared/otp.dart';
 
@@ -21,6 +22,7 @@ class _UserDataState extends State<UserData> {
   TextEditingController phone_Controller = new TextEditingController();
   TextEditingController email_controller = new TextEditingController();
   TextEditingController date_controller = new TextEditingController();
+  //String uid, name, dob, phoneno;
   DateTime currentDate = DateTime.now();
   String date;
   bool obscure = true;
@@ -43,6 +45,16 @@ class _UserDataState extends State<UserData> {
     username_Controller.dispose();
     phone_Controller.dispose();
     super.dispose();
+  }
+
+  void _handleDialogSubmission() {
+    var userDetail = <String, dynamic>{
+      'username': username_Controller.text,
+      'uid': email_controller.text,
+      'dob': date_controller.text,
+      'phonenumber': phone_Controller.text
+    };
+    Database.addStudent(userDetail);
   }
 
   @override
@@ -303,6 +315,7 @@ class _UserDataState extends State<UserData> {
                                         dob.isNotEmpty) {
                                       // _auth.createUserWithEmailAndPassword(
                                       // email: username, password: password);
+                                      _handleDialogSubmission();
                                       Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
