@@ -4,7 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/university/uniinit.dart';
 import 'package:frontend/auth/verify.dart';
-import 'package:frontend/shared/load2uinit.dart';
+import 'package:frontend/screens/university/load2uinit.dart';
 
 class University extends StatefulWidget {
   @override

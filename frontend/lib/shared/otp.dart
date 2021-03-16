@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/student/initscreen.dart';
 import 'package:frontend/screens/student/view_certificates.dart';
-import 'package:frontend/shared/load2init.dart';
+import 'package:frontend/screens/universal/load2init.dart';
 import 'package:otp_screen/otp_screen.dart';
 import 'package:email_auth/email_auth.dart';
 

@@ -5,7 +5,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/universal/registermode.dart';
 import 'package:frontend/auth/verify.dart';
-import 'package:frontend/shared/load2init.dart';
+import 'package:frontend/screens/universal/load2init.dart';
 import 'package:frontend/shared/load2otp.dart';
 import 'package:frontend/shared/otp.dart';
 
@@ -20,14 +20,6 @@ class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController username_Controller = new TextEditingController();
   TextEditingController password_Controller = new TextEditingController();
-
-  void sendOtp() async {
-    EmailAuth.sessionName = "Validate User";
-    var res = EmailAuth.sendOtp(receiverMail: username_Controller.text);
-    if (res != null) {
-      print("true");
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -208,7 +200,7 @@ class _LoginState extends State<Login> {
                                         password_Controller.text;
                                     auth.signInWithEmailAndPassword(
                                         email: username, password: password);
-                                    sendOtp();
+
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(

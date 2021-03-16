@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:frontend/screens/universal/login.dart';
+import 'package:frontend/screens/universal/loginMode.dart';
 import 'package:frontend/screens/universal/studentreg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -18,7 +19,7 @@ class _LoadingState extends State<Loading> {
     Timer(
         Duration(seconds: 4),
         () => Navigator.push(context,
-            MaterialPageRoute(builder: (BuildContext context) => Login())));
+            MaterialPageRoute(builder: (BuildContext context) => LoginMode())));
   }
 
   @override
